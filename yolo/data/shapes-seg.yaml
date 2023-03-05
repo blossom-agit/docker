@@ -1,0 +1,12 @@
+path: /data/datasets/shapes/YOLO_seg  # dataset root dir
+train: images/train  # train images (relative to 'path') 128 images
+val: images/val  # val images (relative to 'path') 128 images
+test:  # test images (optional)
+
+# Classes
+names:
+  0: square
+  1: star
+  2: triangle
+  3: circle
+

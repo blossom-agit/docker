@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+   - name: uninstall nvidia using installer
+     ignore_errors: yes
+     become: true
+     command: "nvidia-installer --uninstall --silent"
+   - name: uninstall nvidia and cuda drivers
+     ignore_errors: yes
+     become: true
+     apt:
+       name: ['libnvidia-*', 'nvidia-*', 'cuda-*']
+       state: absent
+       purge: yes
+       force: yes

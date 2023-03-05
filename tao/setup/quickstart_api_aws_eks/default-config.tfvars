@@ -1,0 +1,5 @@
+cluster_version = "1.23"
+instance_type = "g4dn.12xlarge"
+instance_count = "1"
+api_chart = "https://helm.ngc.nvidia.com/nvidia/tao/charts/tao-toolkit-api-4.0.0.tgz"
+api_values = "./tao-toolkit-api-helm-values.yml"

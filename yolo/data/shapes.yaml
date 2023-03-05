@@ -1,0 +1,6 @@
+train: /code/yolo/data/shapes/images/train
+val: /code/yolo/data/shapes/images/val
+
+nc: 4
+
+names: ["square", "star", "triangle", "circle"]

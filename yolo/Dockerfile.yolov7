@@ -1,0 +1,17 @@
+FROM nvidia/cuda:11.3.0-cudnn8-devel-ubuntu20.04
+
+####### ENV #######
+# ignore timezone setup process
+ARG DEBIAN_FRONTEND=noninteractive
+# timezone variable
+ENV TZ=Asia/Seoul
+
+
+####### install #######
+RUN apt-get update && apt-get install -y ca-certificates curl gnupg lsb-release git zip nano wget screen libgl1-mesa-glx\
+    build-essential unixodbc unixodbc-dev \
+    python3 python3-pip
+   
+COPY ./requirements_yolov7.txt requirements.txt
+RUN pip3 install -r requirements.txt
+RUN pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
